@@ -5,16 +5,17 @@
 * Return: Always 0 (Success)
 */
 int  main(void)
-
 {
-	for (int x = 'A'; x <= 'Z'; x++)
+	int x;
+	char c;
 
+	for (x = 0; x < 26; x++)
 	{
-	int lower_x = tolower(x);
-
-	putchar(lower_x);
-
+		c = 97 + x;
+		putchar(c);
 	}
+
+	putchar('\n');
 	return (0);
 }
 
