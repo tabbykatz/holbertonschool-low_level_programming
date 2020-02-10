@@ -1,1 +1,1 @@
-This is the README for Holberton Low Level Programming repo
+This is the Readme for 0x02 functions and nested loops. 
