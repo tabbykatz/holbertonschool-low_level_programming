@@ -6,8 +6,14 @@
   * Return: last digit
   */
 int print_last_digit(int d)
+
 {
-	int abs(int d);
-	return (d % 10);
+	int digit = d % 10;
+
+	if (digit < 0)
+	{
+		digit = digit * (-1);
+	}
+return (digit);
 }
 
