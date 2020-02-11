@@ -1,20 +1,21 @@
 #include "holberton.h"
 /**
-  * main- entry point.
+  * main - entry point.
   *
   * Return: 0
+  *
   */
 int main(void)
 {
+print_alphabet();
 return (0);
 }
-void print_alphabet(void)
 /**
-  *print_alphabet is a function that prints the lower alpha
+  * print_alphabet - prints the lowercase alphabet
   *
-  *Return (void)
-  *
+  * Return- void
   */
+void print_alphabet(void)
 {
 char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
 int x;
