@@ -2,17 +2,17 @@
 /**
   *main- a program that prints Holberton
   *
-  *return: zero
+  *Return: zero
   *
   */
 int main(void)
 {
 char Holberton[9] = "Holberton";
 int counter;
-for (counter = 0; counter < 10; counter++)
+	for (counter = 0; counter < 10; counter++)
 	{
 		_putchar(Holberton[counter]);
 	}
 _putchar('\n');
-return 0;
+return (0);
 }
