@@ -21,8 +21,7 @@ if (n >= 0 && n <= 15)
 		product = x * y;
 		if (y == 0)
 		{
-			_putchar(product);
-			continue;
+			_putchar('0');
 		}
 		else if (y != 0 && product < 10)
 		{
@@ -30,35 +29,26 @@ if (n >= 0 && n <= 15)
 			_putchar(' ');
 			_putchar(' ');
 			_putchar(' ');
+			_putchar(product + '0');
 		}
-			if (product > 9 && product < 100)
+		else if (product < 100)
 		{
 			_putchar(',');
 			_putchar(' ');
 			_putchar(' ');
+			_putchar(product / 10 + '0');
+			_putchar(product % 10 + '0');
 		}
 		else if (product > 99)
 		{
 			_putchar(',');
 			_putchar(' ');
-		}
-		if (product < 10)
-		{
-			_putchar(product);
-		}
-		else if (product < 100)
-		{
-			_putchar(product / 10 + '0');
+			_putchar(((product / 10)) / 10 + '0');
+			_putchar((product / 10) % 10 + '0');
 			_putchar(product % 10 + '0');
 		}
-		else
-		{
-			_putchar(((product / 10) % 10) / 10);
-			_putchar((product / 10) % 10);
-			_putchar(product % 10);
 		}
 		_putchar('\n');
-		}
 }
 }
 }
