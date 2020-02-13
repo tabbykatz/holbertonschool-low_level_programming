@@ -8,8 +8,8 @@
   */
 int main(void)
 {
-unsigned int a, b, c;
-unsigned int i;
+long int a, b, c;
+long int i;
 int upto;
 a = 0;
 b = 1;
@@ -18,7 +18,7 @@ upto = 50;
 for(i = 1; i <= upto; i++)
 {
 
-	printf("%d", c);
+	printf("%li", c);
 	a = b;
 	b = c;
 	c = a + b;
