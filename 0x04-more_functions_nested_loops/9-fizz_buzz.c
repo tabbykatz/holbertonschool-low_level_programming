@@ -17,7 +17,7 @@ for (num = 1; num < 101; num++)
 	else if (num % 5 == 0 && num % 3 != 0)
 		printf("Buzz");
 	else if (num % 3 == 0 && num % 5 == 0)
-		printf("Fizz Buzz");
+		printf("FizzBuzz");
 	else
 	{	
 		printf("%d", num);
