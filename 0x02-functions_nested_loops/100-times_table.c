@@ -21,26 +21,44 @@ if (n >= 0 && n <= 15)
 		product = x * y;
 		if (y == 0)
 		{
-			printf("%d", product);
+			_putchar(product);
 			continue;
 		}
 		else if (y != 0 && product < 10)
 		{
-			printf(",   ");
+			_putchar(',');
+			_putchar(' ');
+			_putchar(' ');
+			_putchar(' ');
 		}
 			if (product > 9 && product < 100)
 		{
-			printf(",  ");
+			_putchar(',');
+			_putchar(' ');
+			_putchar(' ');
 		}
 		else if (product > 99)
 		{
-			printf(", ");
+			_putchar(',');
+			_putchar(' ');
 		}
-		printf("%d", product);
+		if (product < 10)
+		{
+			_putchar(product);
 		}
-	printf("\n");
-	}
+		else if (product < 100)
+		{
+			_putchar(product / 10 + '0');
+			_putchar(product % 10 + '0');
+		}
+		else
+		{
+			_putchar(((product / 10) % 10) / 10);
+			_putchar((product / 10) % 10);
+			_putchar(product % 10);
+		}
+		_putchar('\n');
+		}
 }
 }
-
-
+}
