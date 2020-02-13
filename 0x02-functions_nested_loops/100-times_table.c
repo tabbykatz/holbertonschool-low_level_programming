@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
-  * print_times_table(int n) - prnits the n table
+  * print_times_table- prnits the n table
   *@n: the times table to be printed
   *
   * Return: void
@@ -11,11 +11,11 @@ void print_times_table(int n)
 int product;
 int x;
 int y;
-	
-if (n != 0 && n <= 15)
+
+if (n >= 0 && n <= 15)
 {
 	for (x = 0; x <= n; x++)
-	{	
+	{
 		for (y = 0; y <= n; y++)
 		{
 		product = x * y;
@@ -32,7 +32,7 @@ if (n != 0 && n <= 15)
 		{
 			printf(",  ");
 		}
-		else
+		else if (product > 99)
 		{
 			printf(", ");
 		}
@@ -42,6 +42,5 @@ if (n != 0 && n <= 15)
 	}
 }
 }
-	
 
 
