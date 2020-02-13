@@ -22,7 +22,7 @@ for (num = 1; num < 101; num++)
 	{
 		printf("%d", num);
 	}
-	if (num <= 100)
+	if (num < 100)
 		printf(" ");
 }
 printf("\n");
