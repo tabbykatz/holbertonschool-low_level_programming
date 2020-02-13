@@ -8,8 +8,8 @@
   */
 int main(void)
 {
-int a, b, c;
-int i;
+unsigned int a, b, c;
+unsigned int i;
 int upto;
 a = 0;
 b = 1;
