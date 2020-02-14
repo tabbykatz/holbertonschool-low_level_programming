@@ -8,11 +8,10 @@
   */
 void print_number(int n)
 {
-int i = 1000000;
+int i = 1000000000;
 int started = 0;
 int value;
 value = n / i;
-
 if (n == 0)
 {
 _putchar('0');
@@ -22,8 +21,6 @@ if (n < 0)
 {
 	_putchar('-');
 	n = -n;
-}
-for (i = 1000000; i > 0; i = i / 10)
 {
 if (n >= i)
 {
@@ -35,4 +32,5 @@ else if (started)
 	_putchar('0');
 	
 }   
+}
 }
