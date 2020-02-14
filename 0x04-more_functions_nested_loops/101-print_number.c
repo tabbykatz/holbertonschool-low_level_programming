@@ -1,36 +1,21 @@
-#include <stdio.h>
 #include "holberton.h"
+#include <stdio.h>
 /**
-  * print_number - prints an integer probably a very big one
-  * @n: that's the number!
+  * print_number - we're printing some serious numbers
+  * @n: that's the number, fear it.
   *
   * Return: void
   */
 void print_number(int n)
 {
-int i = 1000000000;
-int started = 0;
-int value;
-value = n / i;
-if (n == 0)
-{
-_putchar('0');
-return;
-}
-if (n < 0)
-{
-	_putchar('-');
-	n = -n;
-{
-if (n >= i)
-{
-	started = 1;
-	_putchar('0' + value);
-	n = n - (value * i);
-}
-else if (started)
-	_putchar('0');
-	
-}   
-}
+	if (n < 0)
+	{
+		_putchar('-');
+		n = -n;
+	}
+	{
+		if (n / 10)
+		print_number(n / 10);
+		_putchar('0' + n % 10);
+	}
 }
