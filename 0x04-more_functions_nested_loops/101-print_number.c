@@ -8,27 +8,31 @@
   */
 void print_number(int n)
 {
-int l = 0;
-int last;
+int i = 1000000;
+int started = 0;
+int value;
+value = n / i;
 
+if (n == 0)
+{
+_putchar('0');
+return;
+}
 if (n < 0)
 {
-_putchar('-');
-n = -n;
+	_putchar('-');
+	n = -n;
 }
-for (l = 0; l <= n; l++)
-{	
-	if ( n == 0)
-	{
-		_putchar('0');
-		break;
-	}
-	else
-		_putchar(n % 10);
-		last = n % 10;
-		n = n - last;
-		n = n / 10;
-	}
-_putchar('\n');
+for (i = 1000000; i > 0; i = i / 10)
+{
+if (n >= i)
+{
+	started = 1;
+	_putchar('0' + value);
+	n = n - (value * i);
 }
-
+else if (started)
+	_putchar('0');
+	
+}   
+}
