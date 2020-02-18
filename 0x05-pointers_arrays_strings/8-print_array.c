@@ -32,5 +32,6 @@ void print_array(int *a, int n)
 				ptr1++;
 			}
 		}
+	printf("\n");
 	}
 }
