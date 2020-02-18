@@ -11,15 +11,14 @@
 char *_strcpy(char *dest, char *src)
 {
 	char *answer = dest;
-	int i = 0;
 
-	for (; *src; i++)
+	for (; *src; )
 	{
 		*dest = *src;
 		dest++;
 		src++;
 	}
-	dest[i] = '\0';
+	*(dest + 1) = '\0';
 return (answer);
 }
 
