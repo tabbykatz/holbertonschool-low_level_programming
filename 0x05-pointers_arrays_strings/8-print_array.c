@@ -8,30 +8,17 @@
   */
 void print_array(int *a, int n)
 {
-	int *ptr1 = a;
-	int *ptr2 = a;
-	int original_n = n;
+	int i = 0;
+	int *begin = a;
 
-	while (n - 1)
+	for (; *a; a++)
 	{
-		ptr2++;
-		n--;
-	}
-	while (ptr1 <= ptr2)
-	{
-		while (original_n--)
+		if (i < n - 1)
 		{
-			if (ptr1 < ptr2)
-			{
-				printf("%d, ", *ptr1);
-				ptr1++;
-			}
-			else
-			{
-				printf("%d", *ptr1);
-				ptr1++;
-			}
+			printf("%d, ", begin[i]);
+			i++;
 		}
-	printf("\n");
 	}
+	printf("%d", begin[i]);
+	printf("\n");
 }
