@@ -4,7 +4,7 @@
   *to by src, including the terminating null byte
   *to the buffer pointed to by dest
   * @dest: points to buffer
-  * @src: poits to string
+  * @src: points to string
   *
   * Return: pointer
   */
@@ -12,13 +12,12 @@ char *_strcpy(char *dest, char *src)
 {
 	char *answer = dest;
 
-	for (; *src; )
+	while (*src)
 	{
 		*dest = *src;
 		dest++;
 		src++;
 	}
-	dest++;
 	*dest = '\0';
 return (answer);
 }
