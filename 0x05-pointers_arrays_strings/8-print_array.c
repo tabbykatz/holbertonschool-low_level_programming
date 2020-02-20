@@ -9,19 +9,17 @@
 void print_array(int *a, int n)
 {
 	int i = 0;
-	int *begin = a;
 
 	if (n > 0)
+	printf("%d", a[i]);
+	a++;
+	i++;
+	n--;
+	for (; n > 0; n--)
 	{
-		for (; *a; a++)
-		{
-			if (i < n - 1)
-			{
-				printf("%d, ", begin[i]);
-				i++;
-			}
-		}
-		printf("%d", begin[i]);
-		printf("\n");
+		printf(", %d", a[i]);
+		i++;
+		a++;
 	}
+	printf("\n");
 }
