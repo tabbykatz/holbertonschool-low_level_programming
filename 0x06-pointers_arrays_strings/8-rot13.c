@@ -5,7 +5,7 @@
   * @p: the string
   *
   *
-  * Return: rot
+  * Return: p
   *
   */
 char *rot13(char *p)
@@ -23,7 +23,7 @@ char *rot13(char *p)
 			{
 				p[i] = rotvalue2[j];
 				i++;
-				break;
+				j = 0;
 			}
 			else
 			j++;
