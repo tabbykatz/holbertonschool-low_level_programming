@@ -26,7 +26,6 @@ char *rot13(char *p)
 				i++;
 				j = 0;
 			}
-			else
 			j++;
 		}
 		i++;
