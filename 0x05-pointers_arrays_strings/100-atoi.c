@@ -9,40 +9,13 @@ int _atoi(char *s)
 	int value = 0;
 	int j = 0;
 	int isnum = 0;
-	int sign = 0;
+	int sign = 1;
 
 	for (; s[j]; j++)
 	{
 		if (s[j] == '-')
-		{
-			if (sign >= 0)
-			{
-				sign = -1;
-				j++;
-				break;
-			}
-			else
-			{
-				sign = +1;
-				j++;
-				break;
-			}
-		}
-		else if (s[j] == '+')
-		{	if (sign >= 0)
-			{
-				sign = +1;
-				j++;
-				break;
-			}
-			else 
-			{
-				sign = -1;
-				j++;
-				break;
-			}
-		}
-		else if (s[j] >= '0' && s[j] <= '9')
+    		sign *= -1;	
+		if (s[j] >= '0' && s[j] <= '9')
 		{
 			if (sign < 1)
 			{
