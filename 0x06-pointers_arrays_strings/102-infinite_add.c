@@ -9,7 +9,6 @@
   */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	char answer[] = r;
 	int i = 0;
 	int value = 0;
 
@@ -17,5 +16,5 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	{
 		value += (n1[i] - '0') + (n2[i] - '0');
 	}
-	return (answer);
+	return (r);
 }
