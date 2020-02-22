@@ -9,7 +9,7 @@
   */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	
+
 	int x = 0;
 	int i = 0;
 	int j = 0;
@@ -20,7 +20,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	unsigned int value2 = 0;
 	unsigned int value3 = 0;
 	char *p = r;
-	
+
 	while (r[x + 1])
 	{
 		r++;
@@ -56,15 +56,12 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	count += 1;
 	if (count > size_r)
 		return (0);
-	else
+	for (; size_r; size_r--)
 	{
-		for (; size_r; size_r--)
-		{
-			digit = (value3 % 10);
-			value3 = (value3 - digit);
-			r[x] = digit + '0';
-			x--;
-		}
+		digit = (value3 % 10);
+		value3 = (value3 - digit);
+		r[x] = digit + '0';
+		x--;
 	}
 	return (p);
 }
