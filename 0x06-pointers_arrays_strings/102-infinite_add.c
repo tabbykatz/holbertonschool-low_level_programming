@@ -10,7 +10,6 @@
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 
-	int x = 0;
 	int i = 0;
 	int j = 0;
 	int count = 0;
@@ -21,11 +20,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	unsigned int value3 = 0;
 	char *p = r;
 
-	while (r[x + 1])
-	{
-		r++;
-		x++;
-	}
 	while (n1[i + 1])
 	{
 		n1++;
@@ -56,12 +50,11 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	count += 1;
 	if (count > size_r)
 		return (0);
-	for (; size_r; size_r--)
+	for (; count; count--)
 	{
 		digit = (value3 % 10);
 		value3 = (value3 - digit);
-		r[x] = digit + '0';
-		x--;
+		r[count] = digit + '0';
 	}
 	return (p);
 }
