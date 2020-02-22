@@ -5,11 +5,12 @@
   * @p: the string
   *
   *
-  * Return: p
+  * Return: rot
   *
   */
 char *rot13(char *p)
 {
+	char *rot = p;
 	int i = 0;
 	int j = 0;
 	char rotvalue1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -30,5 +31,5 @@ char *rot13(char *p)
 		}
 		i++;
 	}
-	return (p);
+	return (rot);
 }
