@@ -1,18 +1,69 @@
 #include "holberton.h"
 /**
-  *
-  *
-  *
-  *
+  * _atoi - convert string to int
+  * @s: the string
+  * Return: int
   */
 int _atoi(char *s)
 {
-	int numerical = 0;
-	int i;
+	int value = 0;
+	int j = 0;
+	int isnum = 0;
+	int sign = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (; s[j]; j++)
 	{
-		numerical = numerical * 10 + s[i] - '0';
-		return (numerical);
+		if (s[j] == '-')
+		{
+			if (sign >= 0)
+			{
+				sign = -1;
+				j++;
+				break;
+			}
+			else
+			{
+				sign = +1;
+				j++;
+				break;
+			}
+		}
+		else if (s[j] == '+')
+		{	if (sign >= 0)
+			{
+				sign = +1;
+				j++;
+				break;
+			}
+			else 
+			{
+				sign = -1;
+				j++;
+				break;
+			}
+		}
+		else if (s[j] >= '0' && s[j] <= '9')
+		{
+			if (sign < 1)
+			{
+				isnum = 1;
+				value *= 10;
+				value += -(s[j] - '0');
+				continue;
+			}
+			else
+			{
+				isnum = 1;
+				value *= 10;
+				value += s[j] - '0';
+				continue;
+			}
+		}
+		else if (isnum)
+		{
+			j++;
+			break;
+		}
 	}
+	return (value);
 }
