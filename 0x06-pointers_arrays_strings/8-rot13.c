@@ -10,24 +10,21 @@
 char *rot13(char *p)
 {
 	char *rot = p;
-	int i = 0;
 	int j = 0;
 	char rotvalue1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char rotvalue2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	while (p[i])
+	while (*rot)
 	{
-		for (j = 0; rotvalue1[j]; )
+		for (j = 0; rotvalue1[j]; j++)
 		{
-			if (p[i] == rotvalue1[j])
+			if (*rot == rotvalue1[j])
 			{
-				p[i] = rotvalue2[j];
-				i++;
-				j = 0;
+				*rot = rotvalue2[j];
+				break;
 			}
-			j++;
 		}
-		i++;
+		rot++;
 	}
-	return (rot);
+	return (p);
 }
