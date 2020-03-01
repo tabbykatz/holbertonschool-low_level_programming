@@ -14,20 +14,26 @@ int main(int argc, char **argv)
 {
 	int sum = 0;
 	int i = 1;
+	int additive = 0;
+	char *nope;
 
-	if (argc < 3)
+	if (argc < 2)
 	{
 		printf("0\n");
 		return (0);
 	}
 	for (; i < argc; i++)
 	{
-		if (*argv[i] < '0' || *argv[i] > '9')
+		additive = strtol(argv[i], &nope, 10);
+		if (*nope == '\0')
+		{
+			sum += additive;
+		}
+		else
 		{
 			printf("Error\n");
 			return (1);
 		}
-		sum += atoi(argv[i]);
 	}
 	printf("%d\n", sum);
 	return (0);
