@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-  *_strlen - counts and reutns string length
+  *_strlen - counts and returns string length
   * @s: that's the string
   *
   * Return: the length
@@ -33,10 +33,11 @@ char *str_concat(char *s1, char *s2)
 	unsigned int j;
 	int total = 0;
 
-	if (*s1)
-		total += _strlen(s1);
-	if (*s2)
-		total += _strlen(s2);
+	if (!s1)
+		s1 = "";
+	if (!s2)
+		s2 = "";
+	total += _strlen(s1) + _strlen(s2);
 	new = malloc((total * sizeof(char)) + 1);
 	if (new == NULL)
 	{
