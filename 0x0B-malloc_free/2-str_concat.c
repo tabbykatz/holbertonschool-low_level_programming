@@ -10,7 +10,7 @@
 int _strlen(char *s)
 {
 int counter = 0;
-while (*s != 0)
+while (*s)
 {
 	counter++;
 	s++;
@@ -34,10 +34,6 @@ char *str_concat(char *s1, char *s2)
 		total += _strlen(s1);
 	if (*s2)
 		total += _strlen(s2);
-	for (i = 0; s2[i]; i++)
-	{
-		total++;
-	}
 	new = malloc((total * sizeof(char)) + 1);
 	if (new == NULL)
 	{
