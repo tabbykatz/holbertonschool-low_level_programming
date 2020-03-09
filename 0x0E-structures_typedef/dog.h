@@ -1,11 +1,17 @@
-#include "dog.h"
-
+#ifndef DOG_H
+#define DOG_H
 /**
- * free_dog -
+ * struct dog - ruff ruff
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: owner of dog
  *
- * Return: 
+ * Description: just keeping track of the pups
  */
-void free_dog(dog_t *d)
+struct dog
 {
-
-}
+	char *name;
+	float age;
+	char *owner;
+};
+#endif /*DOG_H */
