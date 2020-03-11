@@ -25,7 +25,9 @@ int main(int argc, char **argv)
 
 	/* prints opcodes */
 	for (i = 0; i < (atoi(argv[1]) - 1); i++, pointer++)
+	{
 		printf("%02x ", *pointer);
+	}
 	printf("%02x\n", *pointer);
 	return (0);
 }
