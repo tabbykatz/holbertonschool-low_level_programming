@@ -1,4 +1,6 @@
 #include "3-calc.h"
+#include <stdlib.h>
+#include <stdio.h>
 /**
   * get_op_func - choosing the right func for the operator
   * @s: the operator
@@ -19,10 +21,10 @@ int (*get_op_func(char *s))(int, int)
 	int i;
 	/* matches operator to function */
 	i = 0;
-	while (*(ops[i]->op))
+	while (ops[i].op)
 	{
-		if (*s == *(ops[i]->op)
-			return (ops[i]->f);
+		if (ops[i].op[0] == *s && s[1] == '\0')
+			return (ops[i].f);
 		i++;
 	}
 	/* bad operator, print error */
