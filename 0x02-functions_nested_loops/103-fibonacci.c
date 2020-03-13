@@ -10,9 +10,9 @@
 int main(void)
 {
 	/*declarations */
-	unsigned long int sum = 0;
-	unsigned long int f1 = 0;
-	unsigned long int f2 = 1;
+	long int sum = 0;
+	long int f1 = 0;
+	long int f2 = 1;
 	/* looping up to 4,000,000 */
 	while (f2 < 4000000)
 	{
@@ -23,6 +23,6 @@ int main(void)
 		f1 = f2;
 		f2 = f1 + f2;
 	}
-	printf("%lu\n", sum);
+	printf("%li\n", sum);
 	return (0);
 }
