@@ -1,8 +1,8 @@
-##Low-level programming & Algorithm - Hatching out  
+## Low-level programming & Algorithm - Hatching out  
 ------------------------------------------------  
 
 
-###Welcome to the repo for this set of projects I've completed as a Holberton student.   
+### Welcome to the repo for this set of projects I've completed as a Holberton student.   
 
 212 0x00. C - Hello, World [Feb 5 20...Feb 6 20]
 
