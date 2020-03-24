@@ -7,8 +7,11 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
+	/* declarations */
 	size_t nodeCount = 0;
-
+	/* check for null pointer */
+	if (!head)
+		exit(98);
 	while (head)
 	{
 		printf("[%p] %d\n", (void *)head, head->n);
