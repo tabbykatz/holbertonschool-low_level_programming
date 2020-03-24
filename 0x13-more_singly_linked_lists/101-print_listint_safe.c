@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * print_listint_safe - prints list
+ * print_listint_safe - prints list, avoids loop
  * @head: points to start of list
  * Return: number of nodes in size_t or exit 98
  */
