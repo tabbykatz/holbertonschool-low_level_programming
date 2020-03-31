@@ -16,7 +16,7 @@ void printerrors(char *message, char *file, int exitVal)
   * @argc: # of args passed
   * @argv: pointer to array containing args
   *
-  * Return: 1 for win
+  * Return: 0 for win
   */
 int main(int argc, char **argv)
 {
