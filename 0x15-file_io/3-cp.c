@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 
 		writeVal = write(fddest, buffer, readVal);
 		if (writeVal < 0 || writeVal != readVal)
-			printerrors("Error: can't write to ", argv[2], 99);
+			printerrors("Error: Can't write to ", argv[2], 99);
 
 		} while (writeVal == 1024);
 	if (close(fdsrc))
