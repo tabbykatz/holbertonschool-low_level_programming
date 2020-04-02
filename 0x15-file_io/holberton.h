@@ -15,8 +15,8 @@ int create_file(const char *filename, char *text_content);
 int append_text_to_file(const char *filename, char *text_content);
 /* prototypes for ELF */
 void errors(char *msg);
-void pentry(char *buffer);
-void pentry(char *buffer);
+void pentry(void);
+void ptype(char *buffer);
 void pos(char *buffer);
 void pversion(char *buffer);
 void pABIversion(char *buffer);
