@@ -32,7 +32,7 @@ void pentry(char *buffer)
 	/* this is all fucked */
 	printf("%x", buffer[2]);
 	/* end fucked */
-	printf ("\n");
+	printf("\n");
 }
 /**
   * ptype - prints type
@@ -64,8 +64,8 @@ switch (buffer[6])
 		default:
 			printf("<unknown>: %x", buffer[6]);
 		break;
-	}	
-	printf ("\n");
+	}
+	printf("\n");
 }
 /**
 * pABIversion - prints the ABI version
@@ -83,7 +83,7 @@ void pABIversion(char *buffer)
 	printf("\n");
 }
 /**
-* pos - printing the os/abi 
+* pos - printing the os/abi
 * @buffer: contains os/abi info
 *
 * Return: void
