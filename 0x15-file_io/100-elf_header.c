@@ -1,10 +1,11 @@
 #include "holberton.h"
 #include <elf.h>
+
+void ptitle(char *title);
+
 /**
 * errors - prints some errors
 * @msg: the error msg
-*
-*
 * Return: void
 */
 void errors(char *msg)
@@ -20,25 +21,9 @@ void errors(char *msg)
 	exit(98);
 }
 /**
-  * pentry - prints entry address
-  * @buffer: contains the entry address info
-  *
-  *
-  * Return: void
-  */
-void pentry(char *buffer)
-{
-	ptitle("Entry point address");
-	/* this is all fucked */
-	printf("%x", buffer[2]);
-	/* end fucked */
-	printf("\n");
-}
-/**
   * ptype - prints type
-  * @buffer: contains type info
   *
-  *
+  *@buffer: contains type info
   * Return: void
   */
 void ptype(char *buffer)
@@ -82,6 +67,41 @@ void pABIversion(char *buffer)
 
 	printf("\n");
 }
+
+/**
+ * pentry - prints the ELF entry point address
+ *
+ */
+void pentry(void)
+{
+	Elf64_Ehdr h;
+	int i = 0, len = 0;
+	unsigned char *p = (unsigned char *)&h.e_entry;
+
+	printf("  Entry point address:               0x");
+	if (h.e_ident[EI_DATA] != ELFDATA2MSB)
+	{
+		i = h.e_ident[EI_CLASS] == ELFCLASS64 ? 7 : 3;
+		while (!p[i])
+			i--;
+		printf("%x", p[i--]);
+		for (; i >= 0; i--)
+			printf("%02x", p[i]);
+		printf("\n");
+	}
+	else
+	{
+		i = 0;
+		len = h.e_ident[EI_CLASS] == ELFCLASS64 ? 7 : 3;
+		while (!p[i])
+			i++;
+		printf("%x", p[i++]);
+		for (; i <= len; i++)
+			printf("%02x", p[i]);
+		printf("\n");
+	}
+}
+
 /**
 * pos - printing the os/abi
 * @buffer: contains os/abi info
@@ -282,7 +302,7 @@ int main(int argc, char **argv)
 	pos(buffer);
 	pABIversion(buffer);
 	ptype(buffer);
-	pentry(buffer);
+	pentry();
 	/* close and check for close */
 	if (close(fd))
 		errors("Could not close the file");
