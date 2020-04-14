@@ -79,7 +79,7 @@ void pentry(void)
 	unsigned char *p = (unsigned char *)&h.e_entry;
 
 	printf("  Entry point address:               0x");
-	if (h.e_ident[EI_DATA] != ELFDATA2MSB)
+	if (h.e_ident[EI_DATA] == ELFDATA2MSB)
 	{
 		i = h.e_ident[EI_CLASS] == ELFCLASS64 ? 7 : 3;
 		while (!p[i])
