@@ -1,8 +1,8 @@
-## Low-level programming & Algorithm - Hatching out  
-------------------------------------------------  
+## Low-level programming & Algorithm - Hatching out
+------------------------------------------------
 
 
-### Welcome to the repo for this set of projects I've completed as a Holberton student.   
+### Welcome to the repo for this set of projects I've completed as a Holberton student.
 
 212 0x00. C - Hello, World [Feb 5 20...Feb 6 20]
 
@@ -12,7 +12,7 @@
 
 539 0x03. C - Debugging [Feb 11 20...Feb 12 20]
 
-  
+
 214 0x02. C - Functions, nested loops [Feb 10 20...Feb 12 20]
 
 
@@ -53,3 +53,18 @@
 
 
 227 0x10. C - Variadic functions [Mar 13 20...Mar 16 20]
+
+
+228 0x11. C - printf [Mar 13 20...Mar 18 20]
+
+
+229 0x12. C - Singly linked lists [Mar 19 20...Mar 20 20]
+
+
+230 0x13. C - More singly linked lists [Mar 23 20...Mar 25 20]
+
+
+232 0x14. C - Bit manipulation [Mar 26 20...Mar 27 20]
+
+
+234 0x15. C - File I/O [Mar 31 20...Apr 1 20]
