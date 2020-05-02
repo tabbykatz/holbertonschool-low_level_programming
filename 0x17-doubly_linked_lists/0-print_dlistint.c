@@ -3,19 +3,19 @@
 /**
  * print_dlistint - print elements of doubly linked list
  * @h: the head of list
- * Return: nodes
+ * Return: number of nodes
  */
 size_t print_dlistint(const dlistint_t *h)
 {
+	/* declarations */
 	size_t nodes = 0;
 
-	if (!h)
-		return (0);
+/* walk through list and print */
 	while (h)
 	{
-		printf("%u\n", h->n);
-		nodes += 1;
+		printf("%d\n", h->n);
 		h = h->next;
+		nodes++;
 	}
 	return (nodes);
 }
