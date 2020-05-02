@@ -9,33 +9,37 @@
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	/* declarations */
-	unsigned int i;
-	dlistint_t *location, *temp = NULL;
+	dlistint_t *location, *temp;
 
-	/* check for NULL, return fail */
-	if (!(head && *head))
-		return (-1);
-
-	/* set location to head, check for index == 0 */
-	location = *head;
-	if (index == 0)
+	if (head)
 	{
-		temp = location;
-		*head = location->next;
-		free(temp);
-		return (1);
-	}
-	/* look for the index, delete the right node, or fail if !index node */
-	else
-		for (i = 0; i < (index - 1); i++)
+	/* set location to head, check for index == 0 */
+		location = *head;
+		if (index < 1)
 		{
-			if (location->next)
-			location = location->next;
-			else
+			if (!location)
 				return (-1);
+			*head = location->next;
+			if (*head)
+				(*head)->prev = NULL;
+			free(location);
+			return (1);
 		}
-		temp = location->next;
-		location->next = temp->next;
-	free(temp);
-	return (1);
+	/* look for the index, delete the right node, or fail if !index node */
+		for (; location; location = location->next, index--)
+		{
+			if (index - 1 == 0)
+			{
+				temp = location->next;
+				if (!temp)
+					break;
+				location->next = temp->next;
+				if (temp->next)
+					temp->next->prev = location;
+				free(temp);
+				return (1);
+			}
+		}
+	}
+	return (-1);
 }
