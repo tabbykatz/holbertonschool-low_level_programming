@@ -5,11 +5,12 @@
  * @size: the size of said table
  * Return: a ptr to new table or NULL
  */
+
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	/* declarations */
 	hash_table_t *table;
-	
+
 	/* if size fail */
 	if (!size)
 		return (NULL);
