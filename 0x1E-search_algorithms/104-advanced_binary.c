@@ -13,7 +13,7 @@ int advanced_binary(int *array, size_t size, int value)
 	int mid, retval;
 
 	/* check for null array */
-	if (!array)
+	if (!array || size == 0)
 		return (-1);
 
 	print_it(array, 0, size - 1);
@@ -33,8 +33,8 @@ int advanced_binary(int *array, size_t size, int value)
 	else if (array[mid] > value)
 		return (advanced_binary(array, size / 2 - 1, value));
 	else if (mid != 0)
-		return (advanced_binary(array,
-					(size % 2 ? (size + 1) / 2 : size / 2), value));
+		return (advanced_binary(array, (size % 2 ? (size + 1)
+						/ 2 : size / 2), value));
 	else if (array[mid] == value)
 		return (mid);
 
