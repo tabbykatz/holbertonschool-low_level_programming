@@ -27,7 +27,7 @@ int advanced_binary(int *array, size_t size, int value)
 	if (array[mid] < value)
 	{
 		retval = advanced_binary(array + mid + 1, size / 2, value);
-		/* if retval is -1, it's not really in this case */
+		/* if retval is -1, fine otherwise adjust */
 		return (retval == -1 ? -1 : retval + mid + 1);
 	}
 	else if (array[mid] > value)
