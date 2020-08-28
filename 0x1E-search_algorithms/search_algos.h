@@ -53,5 +53,6 @@ skiplist_t *linear_skip(skiplist_t *list, int value);
 /* mine */
 void print_it(int *arr, int begin, int end);
 int re_binary(int *array, int value, size_t low, size_t high);
+int do_binary(int *array, int value, size_t low, size_t high);
 
 #endif /* SEARCH_ALGOS_H */
