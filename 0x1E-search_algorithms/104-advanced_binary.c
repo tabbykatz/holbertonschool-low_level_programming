@@ -59,6 +59,6 @@ int do_binary(int *array, int value, size_t low, size_t high)
 	if (array[mid] < value)
 		return (do_binary(array, value, mid + 1, high));
 	if (array[mid] > value)
-		return (do_binary(array, value, low, mid - 1));
+		return (do_binary(array, value, low, mid));
 	return (-1);
 }
