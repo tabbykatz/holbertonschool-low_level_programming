@@ -9,36 +9,9 @@
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-	/* declarations */
-	int mid, retval;
-
-	/* check for null array */
-	if (!array || size == 0)
+	if (!array)
 		return (-1);
-
-	print_it(array, 0, size - 1);
-
-	/* checking that first val */
-	if (size == 1 && array[0] != value)
-		return (-1);
-
-	/* set up binary pivot */
-	mid = (size - 1) / 2;
-	if (array[mid] < value)
-	{
-		retval = advanced_binary(array + mid + 1, size / 2, value);
-		/* if retval is -1, fine otherwise adjust */
-		return (retval == -1 ? -1 : retval + mid + 1);
-	}
-	else if (array[mid] > value)
-		return (advanced_binary(array, size / 2, value));
-	else if (mid != 0)
-		return (advanced_binary(array, (size % 2 ? (size + 1)
-						/ 2 : size / 2), value));
-	else if (array[mid] == value)
-		return (mid);
-
-	return (-1);
+	return (do_binary(array, value, 0, size - 1));
 }
 /**
  * print_it - to print the array we are searching
@@ -56,4 +29,36 @@ void print_it(int *arr, int begin, int end)
 		else
 			printf("%d, ", arr[begin]);
 	}
+}
+/**
+ * do_binary - a helper to do binary search recursively
+ * @array: the array
+ * @value: that we search for
+ * @low: zero end
+ * @high: high end
+ * Return: index of value or -1
+ */
+int do_binary(int *array, int value, size_t low, size_t high)
+{
+	size_t mid;
+
+	print_it(array, low, high);
+
+	if (high == low && array[low] != value)
+		return (-1);
+
+	mid = ((high - low) / 2) + low;
+
+	if (array[mid] == value)
+	{
+		if (array[mid - 1] == value)
+			return (do_binary(array, value, low, mid - 1));
+		else
+			return (mid);
+	}
+	if (array[mid] < value)
+		return (do_binary(array, value, mid + 1, high));
+	if (array[mid] > value)
+		return (do_binary(array, value, low, mid - 1));
+	return (-1);
 }
