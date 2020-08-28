@@ -31,7 +31,7 @@ int advanced_binary(int *array, size_t size, int value)
 		return (retval == -1 ? -1 : retval + mid + 1);
 	}
 	else if (array[mid] > value)
-		return (advanced_binary(array, size / 2 - 1, value));
+		return (advanced_binary(array, size / 2, value));
 	else if (mid != 0)
 		return (advanced_binary(array, (size % 2 ? (size + 1)
 						/ 2 : size / 2), value));
